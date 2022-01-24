@@ -1,4 +1,4 @@
-import checkLetter from "../../helpers/checkLetter";
+import { checkLetterForWord } from "../../helpers/checkLetter";
 import { Box } from "../Box/Box";
 
 import style from "./row.module.scss";
@@ -16,7 +16,7 @@ export const RowCompleted = ({ word, solution }: RowCompletedProps) => {
         <Box
           key={index}
           value={word[index]}
-          status={checkLetter(word[index], index, solution)}
+          status={checkLetterForWord(word[index], index, solution)}
         />
       ))}
     </div>
