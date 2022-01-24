@@ -5,6 +5,7 @@ import { RowEmpty } from "./components/Rows/RowEmpty";
 import { useWindow } from "./hooks/useWindow";
 import { GameStatus } from "./types/types";
 import { keys } from "./constants";
+import { getWordOfTheDay, isValidWord } from "./services/words";
 
 export default function WordleApp() {
   const [wordOfTheDay, setWordOfTheDay] = useState<string>("");
@@ -14,7 +15,7 @@ export default function WordleApp() {
   const [gameStatus, setGameStatus] = useState<GameStatus>(GameStatus.Playing);
 
   useEffect(() => {
-    setWordOfTheDay("BREAK");
+    setWordOfTheDay(getWordOfTheDay());
   }, []);
 
   const handleKeyDown = (event: KeyboardEvent) => {
@@ -60,6 +61,12 @@ export default function WordleApp() {
       setGameStatus(GameStatus.Lost);
       return;
     }
+
+    if (currentWord.length === 5 && !isValidWord(currentWord)) {
+      alert("no es valida");
+      return;
+    }
+
     //Valid word, but not the word of the day
     setCompletedWords([...completedWords, currentWord]);
     setTurn(turn + 1);
