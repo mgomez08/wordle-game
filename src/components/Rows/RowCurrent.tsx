@@ -6,13 +6,14 @@ interface RowCurrentProps {
 }
 
 export const RowCurrent = ({ word }: RowCurrentProps) => {
+  const wordArray = word.split("");
   return (
     <div className={styles.row}>
-      {word.split("").map((letter, index) => (
+      {wordArray.map((letter, index) => (
         <Box key={index} value={letter} status="edit" />
       ))}
-      {Array.from(Array(5 - word.length)).map((letter, index) => (
-        <Box key={index} value={letter} status="edit" />
+      {Array.from(Array(5 - wordArray.length)).map((letter, index) => (
+        <Box key={index} value={""} status="edit" />
       ))}
     </div>
   );
