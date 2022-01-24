@@ -7,6 +7,9 @@ import { GameStatus } from "./types/types";
 import { keys } from "./constants";
 import { getWordOfTheDay, isValidWord } from "./services/words";
 
+import style from "./wordleapp.module.scss";
+import { KeyBoard } from "./components/KeyBoard/KeyBoard";
+
 export default function WordleApp() {
   const [wordOfTheDay, setWordOfTheDay] = useState<string>("");
   const [turn, setTurn] = useState<number>(1);
@@ -19,26 +22,8 @@ export default function WordleApp() {
   }, []);
 
   const handleKeyDown = (event: KeyboardEvent) => {
-    if (gameStatus !== GameStatus.Playing) return;
-
-    const letter = event.key.toUpperCase();
-
-    if (event.key === "Backspace" && currentWord.length > 0) {
-      onDelete();
-      return;
-    }
-
-    if (event.key === "Enter" && currentWord.length === 5 && turn <= 6) {
-      onEnter();
-      return;
-    }
-
-    if (currentWord.length >= 5) return;
-
-    if (keys.includes(letter)) {
-      onInput(letter);
-      return;
-    }
+    const key = event.key.toUpperCase();
+    onKeyPressed(key);
   };
 
   useWindow("keydown", handleKeyDown);
@@ -48,6 +33,26 @@ export default function WordleApp() {
     setCurrentWord(newWord);
   };
 
+  const onKeyPressed = (key: string) => {
+    if (gameStatus !== GameStatus.Playing) return;
+
+    if (key === "BACKSPACE" && currentWord.length > 0) {
+      onDelete();
+      return;
+    }
+
+    if (key === "ENTER" && currentWord.length === 5 && turn <= 6) {
+      onEnter();
+      return;
+    }
+
+    if (currentWord.length >= 5) return;
+
+    if (keys.includes(key)) {
+      onInput(key);
+      return;
+    }
+  };
   const onEnter = () => {
     //User has completed a word
     if (currentWord === wordOfTheDay) {
@@ -79,16 +84,19 @@ export default function WordleApp() {
   };
 
   return (
-    <div>
-      {completedWords.map((word, index) => (
-        <RowCompleted key={index} word={word} solution={wordOfTheDay} />
-      ))}
-      {gameStatus === GameStatus.Playing ? (
-        <RowCurrent word={currentWord} />
-      ) : null}
-      {Array.from(Array(6 - turn)).map((_, index) => (
-        <RowEmpty key={index} />
-      ))}
-    </div>
+    <>
+      <div className={style.mainContainer}>
+        {completedWords.map((word, index) => (
+          <RowCompleted key={index} word={word} solution={wordOfTheDay} />
+        ))}
+        {gameStatus === GameStatus.Playing ? (
+          <RowCurrent word={currentWord} />
+        ) : null}
+        {Array.from(Array(6 - turn)).map((_, index) => (
+          <RowEmpty key={index} />
+        ))}
+      </div>
+      <KeyBoard keys={keys} onKeyPressed={onKeyPressed} />
+    </>
   );
 }
