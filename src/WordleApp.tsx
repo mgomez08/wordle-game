@@ -1,10 +1,9 @@
-import { Box } from "./components/Box/Box";
+import { RowCompleted } from "./components/Rows/RowCompleted";
 
 export default function WordleApp() {
   return (
     <div>
-      <Box value="a" status="present" />
-      <Box value="hola" status="absent" />
+      <RowCompleted word="sabio" solution="break" />
     </div>
   );
 }
