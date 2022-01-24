@@ -1,6 +1,6 @@
 import { BoxStatus } from "../types/types";
 
-export default function checkLetter(
+export function checkLetterForWord(
   letter: string,
   pos: number,
   solution: string
@@ -13,5 +13,21 @@ export default function checkLetter(
     }
   } else {
     return "absent";
+  }
+}
+
+export function checkLetterForModal(
+  letter: string,
+  pos: number,
+  solution: string
+) {
+  if (solution.includes(letter)) {
+    if (solution[pos] === letter) {
+      return "🟩";
+    } else {
+      return "🟨";
+    }
+  } else {
+    return "⬛";
   }
 }
