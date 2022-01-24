@@ -10,9 +10,19 @@ export function getWordOfTheDay() {
   return wordOfTheDay;
 }
 
-export function isValidWord(word: string) {
-  const words = getWords();
-  return words.includes(word);
+export async function isValidWord(word: string) {
+  try {
+    const URL = process.env.REACT_APP_API_DICTIONARY + word;
+    const response = await fetch(URL);
+    const data = await response.json();
+    if (data[0].word) {
+      return data.length;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    return false;
+  }
 }
 
 function getDayOfTheYear() {
