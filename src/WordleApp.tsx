@@ -54,7 +54,7 @@ export default function WordleApp() {
       return;
     }
   };
-  const onEnter = () => {
+  const onEnter = async () => {
     //User has completed a word
     if (currentWord === wordOfTheDay) {
       setCompletedWords([...completedWords, currentWord]);
@@ -67,9 +67,9 @@ export default function WordleApp() {
       setGameStatus(GameStatus.Lost);
       return;
     }
-
-    if (currentWord.length === 5 && !isValidWord(currentWord)) {
-      alert("no es valida");
+    const validWord = await isValidWord(currentWord);
+    if (currentWord.length === 5 && !validWord) {
+      alert("Word is no valid");
       return;
     }
 
