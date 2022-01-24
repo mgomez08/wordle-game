@@ -9,6 +9,7 @@ import { getWordOfTheDay, isValidWord } from "./services/words";
 
 import style from "./wordleapp.module.scss";
 import { KeyBoard } from "./components/KeyBoard/KeyBoard";
+import { Modal } from "./components/Modal/Modal";
 
 export default function WordleApp() {
   const [wordOfTheDay, setWordOfTheDay] = useState<string>("");
@@ -85,6 +86,19 @@ export default function WordleApp() {
 
   return (
     <>
+      {gameStatus === GameStatus.Won ? (
+        <Modal
+          type="won"
+          completedWords={completedWords}
+          solution={wordOfTheDay}
+        />
+      ) : gameStatus === GameStatus.Lost ? (
+        <Modal
+          type="lost"
+          completedWords={completedWords}
+          solution={wordOfTheDay}
+        />
+      ) : null}
       <div className={style.mainContainer}>
         {completedWords.map((word, index) => (
           <RowCompleted key={index} word={word} solution={wordOfTheDay} />
