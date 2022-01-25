@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <Box /> Box component with Snapshot 1`] = `
+<div
+  className="correct"
+>
+  H
+</div>
+`;
