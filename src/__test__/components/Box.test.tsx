@@ -9,4 +9,10 @@ describe("Tests for <Box />", () => {
   test("Box component should have correct class", () => {
     expect(box.find(".correct").length).toEqual(1);
   });
+  test("Box component should have correct value H", () => {
+    expect(box.find("div").text()).toEqual("H");
+  });
+  test("Box component with Snapshot", () => {
+    expect(box).toMatchSnapshot();
+  });
 });
