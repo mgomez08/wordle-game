@@ -18,6 +18,11 @@ describe("Test for <KeyBoard />", () => {
     expect(keyboard.find("button").length).toEqual(28);
   });
 
+  test("Simulate click on first key", () => {
+    keyboard.find("button").first().simulate("click");
+    expect(onKeyPressed).toHaveBeenCalledWith(keys[0]);
+  });
+
   test("KeyBoard component with Snapshot", () => {
     expect(keyboard).toMatchSnapshot();
   });
