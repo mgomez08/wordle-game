@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <RowCurrent /> RowCurrent component with Snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="edit"
+  >
+    H
+  </div>
+  <div
+    className="edit"
+  >
+    E
+  </div>
+  <div
+    className="edit"
+  >
+    L
+  </div>
+  <div
+    className="edit"
+  >
+    L
+  </div>
+  <div
+    className="edit"
+  >
+    O
+  </div>
+</div>
+`;
