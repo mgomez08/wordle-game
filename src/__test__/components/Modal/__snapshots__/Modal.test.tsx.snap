@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <Modal /> Modal component with Snapshot 1`] = `
+<div
+  className="modalViewContainer"
+>
+  <div
+    className="modalContainer"
+  >
+    <h2>
+      You 
+      Lost :(
+    </h2>
+    <div
+      className="puzzle"
+    >
+      <div
+        className="puzzleWord"
+      >
+        <div
+          key="0"
+        >
+          🟩
+        </div>
+      </div>
+      <div
+        className="puzzleWord"
+      >
+        <div
+          key="0"
+        >
+          🟨
+        </div>
+      </div>
+      <div
+        className="puzzleWord"
+      >
+        <div
+          key="0"
+        >
+          🟨
+        </div>
+      </div>
+      <div
+        className="puzzleWord"
+      >
+        <div
+          key="0"
+        >
+          🟨
+        </div>
+      </div>
+      <div
+        className="puzzleWord"
+      >
+        <div
+          key="0"
+        >
+          🟨
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
