@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <RowCompleted /> RowCompleted component with Snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="correct"
+  >
+    H
+  </div>
+  <div
+    className="correct"
+  >
+    E
+  </div>
+  <div
+    className="correct"
+  >
+    L
+  </div>
+  <div
+    className="correct"
+  >
+    L
+  </div>
+  <div
+    className="correct"
+  >
+    O
+  </div>
+</div>
+`;
