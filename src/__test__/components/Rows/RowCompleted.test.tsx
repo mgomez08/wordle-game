@@ -26,6 +26,10 @@ describe("Tests for <RowCompleted />", () => {
     expect(rowcompleted.find("Box").first().find(".present").length).toEqual(1);
   });
 
+  test("First Box children should have 'H' in the content", () => {
+    expect(rowcompleted.find("Box").first().contains("H")).toEqual(true);
+  });
+
   test("RowCompleted component with Snapshot", () => {
     expect(rowcompleted).toMatchSnapshot();
   });
