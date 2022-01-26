@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <Square /> Square component with Snapshot 1`] = `
+<div
+  className="puzzleWord"
+>
+  <div
+    key="0"
+  >
+    🟩
+  </div>
+  <div
+    key="1"
+  >
+    🟩
+  </div>
+  <div
+    key="2"
+  >
+    🟩
+  </div>
+  <div
+    key="3"
+  >
+    🟩
+  </div>
+  <div
+    key="4"
+  >
+    🟩
+  </div>
+</div>
+`;
