@@ -11,9 +11,15 @@
 
 .keyboardContainer {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 570px;
   margin: 0 auto;
+  gap: 5px;
+}
+.rowKeysContainer {
+  width: 100%;
+  display: flex;
   gap: 5px;
 }
 

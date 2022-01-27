@@ -18,28 +18,34 @@ export const KeyBoard = ({ keys, onKeyPressed }: KeyBoardProps) => {
 
   return (
     <div className={styles.keyboardContainer}>
-      {Array.from(Array(10)).map((_, index) => (
-        <button key={index} className={styles.key} onClick={handleInput}>
-          {keys[index]}
+      <div className={styles.rowKeysContainer}>
+        {Array.from(Array(10)).map((_, index) => (
+          <button key={index} className={styles.key} onClick={handleInput}>
+            {keys[index]}
+          </button>
+        ))}
+      </div>
+      <div className={styles.rowKeysContainer}>
+        <div className={styles.emptyKey}></div>
+        {Array.from(Array(10)).map((_, index) => (
+          <button key={index + 10} className={styles.key} onClick={handleInput}>
+            {keys[index + 10]}
+          </button>
+        ))}
+      </div>
+      <div className={styles.rowKeysContainer}>
+        <button className={styles.enterKey} onClick={handleEnter}>
+          ENTER
         </button>
-      ))}
-      <div className={styles.emptyKey}></div>
-      {Array.from(Array(9)).map((_, index) => (
-        <button key={index + 10} className={styles.key} onClick={handleInput}>
-          {keys[index + 10]}
+        {Array.from(Array(7)).map((_, index) => (
+          <button key={index + 20} className={styles.key} onClick={handleInput}>
+            {keys[index + 20]}
+          </button>
+        ))}
+        <button className={styles.enterKey} onClick={handleDelete}>
+          DELETE
         </button>
-      ))}
-      <button className={styles.enterKey} onClick={handleEnter}>
-        ENTER
-      </button>
-      {Array.from(Array(7)).map((_, index) => (
-        <button key={index + 19} className={styles.key} onClick={handleInput}>
-          {keys[index + 19]}
-        </button>
-      ))}
-      <button className={styles.deleteKey} onClick={handleDelete}>
-        DELETE
-      </button>
+      </div>
     </div>
   );
 };
