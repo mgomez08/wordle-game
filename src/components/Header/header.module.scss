@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+.header {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerHeader {
+  background-color: #333;
+  max-width: 570px;
+  border-radius: 15px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sizeIcon {
+  font-size: 24px;
+}
