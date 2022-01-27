@@ -1,6 +1,12 @@
 @import "./styles/variables.scss";
 
 .mainContainer {
-  width: ($size * 5) + ($gap * 5);
-  margin: 100px auto;
+  max-width: ($size * 5) + ($gap * 5);
+  width: 100%;
+  margin: 50px auto;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
 }

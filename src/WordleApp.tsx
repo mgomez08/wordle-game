@@ -10,6 +10,7 @@ import { getWordOfTheDay, isValidWord } from "./services/words";
 import style from "./wordleapp.module.scss";
 import { KeyBoard } from "./components/KeyBoard/KeyBoard";
 import { Modal } from "./components/Modal/Modal";
+import { Header } from "./components/Header/Header";
 
 export default function WordleApp() {
   const [wordOfTheDay, setWordOfTheDay] = useState<string>("");
@@ -86,6 +87,7 @@ export default function WordleApp() {
 
   return (
     <>
+      <Header />
       {gameStatus === GameStatus.Won ? (
         <Modal
           type="won"
