@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for <RowEmpty RowEmpty component with Snapshot 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="empty"
+  />
+  <div
+    className="empty"
+  />
+  <div
+    className="empty"
+  />
+  <div
+    className="empty"
+  />
+  <div
+    className="empty"
+  />
+</div>
+`;
