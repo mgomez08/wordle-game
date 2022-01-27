@@ -26,7 +26,6 @@ export const KeyBoard = ({ keys, onKeyPressed }: KeyBoardProps) => {
         ))}
       </div>
       <div className={styles.rowKeysContainer}>
-        <div className={styles.emptyKey}></div>
         {Array.from(Array(10)).map((_, index) => (
           <button key={index + 10} className={styles.key} onClick={handleInput}>
             {keys[index + 10]}

@@ -13,7 +13,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 570px;
+  width: 100%;
+  max-width: 570px;
   margin: 0 auto;
   gap: 5px;
 }
@@ -25,7 +26,7 @@
 
 .key {
   @include keybase;
-  width: 50px;
+  width: 100%;
   height: 70px;
 }
 
@@ -39,6 +40,6 @@
 
 .enterKey {
   @include keybase;
-  width: 80px;
+  width: 70px;
   height: 70px;
 }
