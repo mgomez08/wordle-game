@@ -15,7 +15,7 @@ describe("Test for <KeyBoard />", () => {
   });
 
   test("KeyBoard component should have correct number of children (keys)", () => {
-    expect(keyboard.find("button").length).toEqual(29);
+    expect(keyboard.find("button").length).toEqual(28);
   });
 
   test("Simulate click on first key", () => {
