@@ -474,6 +474,7 @@ export const wordsES = [
   "LATAS",
   "LAZAN",
   "LAZOS",
+  "LECHE",
   "LEGAS",
   "LEGOS",
   "LEJOS",
