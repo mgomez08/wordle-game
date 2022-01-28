@@ -4,6 +4,7 @@ import { Modal } from "../../../components/Modal/Modal";
 describe("Tests for <Modal />", () => {
   const modal = mount(
     <Modal
+      setOpenModal={() => {}}
       type="won"
       completedWords={["H", "E", "L", "L", "O"]}
       solution="HELLO"

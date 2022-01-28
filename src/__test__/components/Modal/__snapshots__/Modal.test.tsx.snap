@@ -7,56 +7,88 @@ exports[`Tests for <Modal /> Modal component with Snapshot 1`] = `
   <div
     className="modalContainer"
   >
-    <h2>
-      You 
-      Lost :(
-    </h2>
     <div
-      className="puzzle"
+      className="modalHeader"
     >
+      <button
+        onClick={[Function]}
+      >
+        <i
+          className="far fa-times-circle btnClose"
+        />
+      </button>
+    </div>
+    <div
+      className="modalContent"
+    >
+      <h2>
+        You 
+        Lost :(
+      </h2>
       <div
-        className="puzzleWord"
+        className="puzzle"
       >
         <div
-          key="0"
+          className="puzzleWord"
         >
-          🟩
+          <div
+            key="0"
+          >
+            🟩
+          </div>
+        </div>
+        <div
+          className="puzzleWord"
+        >
+          <div
+            key="0"
+          >
+            🟨
+          </div>
+        </div>
+        <div
+          className="puzzleWord"
+        >
+          <div
+            key="0"
+          >
+            🟨
+          </div>
+        </div>
+        <div
+          className="puzzleWord"
+        >
+          <div
+            key="0"
+          >
+            🟨
+          </div>
+        </div>
+        <div
+          className="puzzleWord"
+        >
+          <div
+            key="0"
+          >
+            🟨
+          </div>
         </div>
       </div>
       <div
-        className="puzzleWord"
+        className="socialShareContainer"
       >
+        <h3>
+          Share your score!
+        </h3>
         <div
-          key="0"
+          className="social"
         >
-          🟨
-        </div>
-      </div>
-      <div
-        className="puzzleWord"
-      >
-        <div
-          key="0"
-        >
-          🟨
-        </div>
-      </div>
-      <div
-        className="puzzleWord"
-      >
-        <div
-          key="0"
-        >
-          🟨
-        </div>
-      </div>
-      <div
-        className="puzzleWord"
-      >
-        <div
-          key="0"
-        >
-          🟨
+          <a
+            className="fab fa-twitter-square btnSocial twitterLogo"
+          />
+          <a
+            className="fab fa-whatsapp-square btnSocial whatsappLogo"
+          />
         </div>
       </div>
     </div>
