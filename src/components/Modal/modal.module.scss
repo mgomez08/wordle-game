@@ -23,6 +23,43 @@
   }
 }
 
+.modalHeader {
+  display: flex;
+  justify-content: end;
+}
+
+.btnClose {
+  font-size: 24px;
+  color: red;
+}
+
+.socialShareContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnSocial {
+  font-size: 46px;
+  cursor: pointer;
+}
+
+.twitterLogo {
+  color: #00aced;
+}
+
+.whatsappLogo {
+  color: #25d366;
+}
+
 .puzzle {
   width: 200px;
   margin: 0 auto;
