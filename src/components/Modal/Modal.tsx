@@ -2,17 +2,26 @@ import styles from "./modal.module.scss";
 import { Square } from "./Square";
 
 interface ModalProps {
+  setOpenModal: (openModal: boolean) => void;
   type: "won" | "lost";
   completedWords: string[];
   solution: string;
 }
 
-export const Modal = ({ type, completedWords, solution }: ModalProps) => {
+export const Modal = ({
+  setOpenModal,
+  type,
+  completedWords,
+  solution,
+}: ModalProps) => {
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
   return (
     <div className={styles.modalViewContainer}>
       <div className={styles.modalContainer}>
         <div className={styles.modalHeader}>
-          <button>
+          <button onClick={handleCloseModal}>
             <i className={"far fa-times-circle " + styles.btnClose}></i>
           </button>
         </div>

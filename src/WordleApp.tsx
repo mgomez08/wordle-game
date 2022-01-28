@@ -18,6 +18,7 @@ export default function WordleApp() {
   const [currentWord, setCurrentWord] = useState<string>("");
   const [completedWords, setCompletedWords] = useState<string[]>([]);
   const [gameStatus, setGameStatus] = useState<GameStatus>(GameStatus.Playing);
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   useEffect(() => {
     setWordOfTheDay(getWordOfTheDay());
@@ -60,12 +61,14 @@ export default function WordleApp() {
     if (currentWord === wordOfTheDay) {
       setCompletedWords([...completedWords, currentWord]);
       setGameStatus(GameStatus.Won);
+      setOpenModal(true);
       return;
     }
     //User has lost
     if (turn === 6) {
       setCompletedWords([...completedWords, currentWord]);
       setGameStatus(GameStatus.Lost);
+      setOpenModal(true);
       return;
     }
     const validWord = await isValidWord(currentWord);
@@ -88,14 +91,16 @@ export default function WordleApp() {
   return (
     <>
       <Header />
-      {gameStatus === GameStatus.Won ? (
+      {openModal && gameStatus === GameStatus.Won ? (
         <Modal
+          setOpenModal={setOpenModal}
           type="won"
           completedWords={completedWords}
           solution={wordOfTheDay}
         />
-      ) : gameStatus === GameStatus.Lost ? (
+      ) : openModal && gameStatus === GameStatus.Lost ? (
         <Modal
+          setOpenModal={setOpenModal}
           type="lost"
           completedWords={completedWords}
           solution={wordOfTheDay}
