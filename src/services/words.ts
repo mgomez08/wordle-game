@@ -1,7 +1,7 @@
-import { words } from "../constants";
+import { words, wordsES } from "../constants";
 
 function getWords() {
-  return words;
+  return wordsES;
 }
 
 export function getWordOfTheDay() {
@@ -11,18 +11,7 @@ export function getWordOfTheDay() {
 }
 
 export async function isValidWord(word: string) {
-  try {
-    const URL = process.env.REACT_APP_API_DICTIONARY + word;
-    const response = await fetch(URL);
-    const data = await response.json();
-    if (data[0].word) {
-      return data.length;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    return false;
-  }
+  return wordsES.includes(word);
 }
 
 function getDayOfTheYear() {
