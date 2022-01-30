@@ -1,3 +1,4 @@
+import { checkLetterForModal } from "../../helpers/checkLetter";
 import styles from "./modal.module.scss";
 import { Square } from "./Square";
 
@@ -17,6 +18,14 @@ export const Modal = ({
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+  let textLink = "";
+  completedWords.map((word) => {
+    word.split("").map((letter, index) => {
+      textLink += checkLetterForModal(letter, index, solution);
+    });
+    textLink += "%0A";
+  });
+
   return (
     <div className={styles.modalViewContainer}>
       <div className={styles.modalContainer}>
@@ -38,7 +47,7 @@ export const Modal = ({
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`https://twitter.com/intent/tweet?url=https://wordle-game-iota.vercel.app/&text=Hola Prueba`}
+                href={`https://twitter.com/intent/tweet?url=https://wordle-game-iota.vercel.app/&text=Wordle Game!%0A${textLink}`}
                 className={`${styles.btnSocial} ${styles.twitterLogo}`}
               >
                 <i className="fab fa-twitter-square"></i>
@@ -46,7 +55,7 @@ export const Modal = ({
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`https://api.whatsapp.com/send?text=Hola Prueba en https://wordle-game-iota.vercel.app/`}
+                href={`https://api.whatsapp.com/send?text=Wordle Game!%0A${textLink}%0Ahttps://wordle-game-iota.vercel.app/`}
                 className={`${styles.btnSocial} ${styles.whatsappLogo}`}
               >
                 <i className="fab fa-whatsapp-square"></i>
