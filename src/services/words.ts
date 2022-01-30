@@ -1,4 +1,4 @@
-import { words, wordsES } from "../constants";
+import { wordsES } from "../constants";
 
 function getWords() {
   return wordsES;
