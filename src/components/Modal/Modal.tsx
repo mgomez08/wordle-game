@@ -36,11 +36,21 @@ export const Modal = ({
             <h3>Share your score!</h3>
             <div className={styles.social}>
               <a
-                className={`fab fa-twitter-square ${styles.btnSocial} ${styles.twitterLogo}`}
-              ></a>
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://twitter.com/intent/tweet?url=https://wordle-game-iota.vercel.app/&text=Hola Prueba`}
+                className={`${styles.btnSocial} ${styles.twitterLogo}`}
+              >
+                <i className="fab fa-twitter-square"></i>
+              </a>
               <a
-                className={`fab fa-whatsapp-square ${styles.btnSocial} ${styles.whatsappLogo}`}
-              ></a>
+                target="_blank"
+                rel="noopener noreferrer"
+                href={`https://api.whatsapp.com/send?text=Hola Prueba en https://wordle-game-iota.vercel.app/`}
+                className={`${styles.btnSocial} ${styles.whatsappLogo}`}
+              >
+                <i className="fab fa-whatsapp-square"></i>
+              </a>
             </div>
           </div>
         </div>
