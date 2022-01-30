@@ -657,6 +657,8 @@ export const wordsES = [
   "PENAS",
   "PENES",
   "PERAS",
+  "PERRA",
+  "PERRO",
   "PEROS",
   "PESAD",
   "PESAS",
