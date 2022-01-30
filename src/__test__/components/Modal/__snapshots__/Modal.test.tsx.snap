@@ -84,11 +84,25 @@ exports[`Tests for <Modal /> Modal component with Snapshot 1`] = `
           className="social"
         >
           <a
-            className="fab fa-twitter-square btnSocial twitterLogo"
-          />
+            className="btnSocial twitterLogo"
+            href="https://twitter.com/intent/tweet?url=https://wordle-game-iota.vercel.app/&text=Hola Prueba"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i
+              className="fab fa-twitter-square"
+            />
+          </a>
           <a
-            className="fab fa-whatsapp-square btnSocial whatsappLogo"
-          />
+            className="btnSocial whatsappLogo"
+            href="https://api.whatsapp.com/send?text=Hola Prueba en https://wordle-game-iota.vercel.app/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <i
+              className="fab fa-whatsapp-square"
+            />
+          </a>
         </div>
       </div>
     </div>
