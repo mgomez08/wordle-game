@@ -22,8 +22,10 @@ export const Modal = ({
   completedWords.map((word) => {
     word.split("").map((letter, index) => {
       textLink += checkLetterForModal(letter, index, solution);
+      return null;
     });
     textLink += "%0A";
+    return null;
   });
 
   return (
