@@ -103,6 +103,8 @@ export const wordsES = [
   "ACUNA",
   "AGUDA",
   "AGUDO",
+  "FUMAR",
+  "AGUJA",
   "ALAJU",
   "ALBOS",
   "ALOJO",
