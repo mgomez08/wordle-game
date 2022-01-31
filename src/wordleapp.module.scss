@@ -1,5 +1,9 @@
 @import "./styles/variables.scss";
 
+body {
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .mainContainer {
   max-width: ($size * 5) + ($gap * 5);
   width: 100%;
