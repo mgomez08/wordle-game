@@ -1,13 +1,14 @@
 @import "../../styles/variables.scss";
+
 .header {
-  color: white;
+  color: $textColor;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .containerHeader {
-  background-color: #333;
+  background-color: $backgroundColorSecondary;
   max-width: 570px;
   border-radius: 15px;
   padding: 0 24px;
